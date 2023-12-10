@@ -31,20 +31,20 @@ export const App=()=>{
   
   return (
     <div className="App">
-      <h1>To Do List</h1>
-      <ul>
+      <h1 className='heading'>To Do List</h1>
+      <ul className='list'>
         { todos.map((todo)=>(
             <li key={todo.id}>
-              <span>{todo.id} - {todo.task}</span>
-              <button onClick={()=>handleListRemoveToDo(todo.id)}>Remove</button>
+              <div>{todo.id} - {todo.task}</div>
+              <button className='btn' onClick={()=>handleListRemoveToDo(todo.id)}>Remove</button>
             </li>
           )) }
       </ul>
       <title>Todo Id: </title>
-      <input type="number" name="newTodoId" id="newTodoId" placeholder='Todo Id' onChange={handleTodoId} />
+      <input type="number" className='inputBox' name="newTodoId" id="newTodoId" placeholder='Todo Id' onChange={handleTodoId} />
       <title>Todo Task: </title>
-      <input type="text" id="newTodoTask" name="newTodoTask" placeholder='Todo Task' onChange={handleTodoTask} onKeyDown={handleKey} />
-      <button type="submit" onClick={handleListAddToDo}>Add</button>
+      <input type="text" className='inputBox' id="newTodoTask" name="newTodoTask" placeholder='Todo Task' onChange={handleTodoTask} onKeyDown={handleKey} />
+      <button type="submit" className='btn' onClick={handleListAddToDo}>Add</button>
     </div>
   );
 }
